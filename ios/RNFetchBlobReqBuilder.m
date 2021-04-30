@@ -115,6 +115,7 @@
                 if([body hasPrefix:FILE_PREFIX]) {
                     __block NSString * orgPath = [body substringFromIndex:[FILE_PREFIX length]];
                     orgPath = [RNFetchBlobFS getPathOfAsset:orgPath];
+                    orgPath = [[NSURL URLWithString:orgPath] path];
                     if([orgPath hasPrefix:AL_PREFIX])
                     {
                         
